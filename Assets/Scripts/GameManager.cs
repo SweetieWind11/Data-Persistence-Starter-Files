@@ -4,7 +4,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance; // Singleton instance
     public static string playerName;
-
     private int score;
 
     private void Awake()
@@ -19,10 +18,17 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); // If another GameManager exists, destroy this one
         }
     }
-
     public void AddScore(int points)
     {
         score += points;
+    }
+    public void SetName(string playerNameTXT)
+    {
+        playerName = playerNameTXT;
+    }
+    public string GetName()
+    {
+        return playerName;
     }
 
     public int GetScore()
